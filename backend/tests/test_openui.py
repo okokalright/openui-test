@@ -13,6 +13,11 @@ def test_create_item():
     assert response.status_code == 200  # Or 201 for created
     assert response.json() == {"name": "Test Item", "description": "A test item", "id": 1} 
 
+def test_create_item2():
+    response = client.post("/items/", json={"name": "Test Item 2", "description": "A test item 2"})
+    assert response.status_code == 200  # Or 201 for created
+    assert response.json() == {"name": "Test Item 2", "description": "A test item 2", "id": 2} 
+    
 def test_create_item3():
     response = client.post("/items/", json={"name": "Test Item3", "description": "A test item"})
     assert response.status_code == 200  # Or 201 for created
